@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const ArticleDetail = () => {
+const ArticleDetailPage = () => {
   const { state } = useLocation();
   const navigate = useNavigate();
 
@@ -56,4 +56,4 @@ const ArticleDetail = () => {
   );
 };
 
-export default ArticleDetail;
+export default ArticleDetailPage;

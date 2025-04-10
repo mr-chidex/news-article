@@ -15,7 +15,7 @@ const ArticleCard = ({ article, height = "h-44" }) => {
     <>
       <article className="flex flex-col gap-4 mb-8 border-b pb-8 border-slate-300">
         <img
-          className={`w-full ${height} object-cover rounded-sm`}
+          className={`w-full ${height} bg-slate-200 object-cover rounded-sm`}
           src={article?.media[0]?.["media-metadata"]?.[2]?.url}
           alt={article?.title}
         />

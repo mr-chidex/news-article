@@ -29,49 +29,47 @@ const HomePage = () => {
   }, []);
 
   return (
-    <section className="pt-24 bg-gradient-to-r from-light via-slate-100 to-light text-slate-600 ">
-      <div className="container  mx-auto">
-        <h1 className="text-3xl text-primary px-4 ">Latest News</h1>
+    <section className="container  mx-auto">
+      <h1 className="text-3xl  px-4 ">Latest News</h1>
 
-        <ul className="flex  flex-wrap gap-2 gap-y-4 my-8 px-4 ">
-          {tags?.map((tag) => (
-            <li
-              key={tag}
-              className="px-6 text-primary p-1 border border-primary rounded-full"
-            >
-              {tag}
-            </li>
-          ))}
-        </ul>
+      <ul className="flex  flex-wrap gap-2 gap-y-4 my-8 px-4 ">
+        {tags?.map((tag) => (
+          <li
+            key={tag}
+            className="px-6  p-1 border border-slate-600 rounded-full"
+          >
+            {tag}
+          </li>
+        ))}
+      </ul>
 
-        {loading ? (
-          <Loader />
-        ) : error ? (
-          <div className="grid place-items-center w-full h-96 backdrop-blur-xl text-xl">
-            {error}
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <div className="grid place-items-center w-full h-96 backdrop-blur-xl text-xl">
+          {error}
+        </div>
+      ) : (
+        <div className="grid grid-cols-12 gap-8">
+          <div className="col-span-12 md:col-span-6 xl:col-span-3 px-4 ">
+            {articles?.map((article) => (
+              <ArticleCard article={article} key={article.id} />
+            ))}
           </div>
-        ) : (
-          <div className="grid grid-cols-12 gap-8">
-            <div className="col-span-12 md:col-span-6 xl:col-span-3 px-4 ">
-              {articles?.map((article) => (
-                <ArticleCard article={article} key={article.id} />
-              ))}
-            </div>
 
-            <div className="md:order-3  xl:order-1 col-span-12 xl:col-span-6 px-4 ">
-              {articles?.map((article) => (
-                <ArticleCard article={article} key={article.id} height="h-96" />
-              ))}
-            </div>
-
-            <div className=" order-1 col-span-12 md:col-span-6 xl:col-span-3 px-4 ">
-              {articles?.map((article) => (
-                <ArticleCard article={article} key={article.id} />
-              ))}
-            </div>
+          <div className="md:order-3  xl:order-1 col-span-12 xl:col-span-6 px-4 ">
+            {articles?.map((article) => (
+              <ArticleCard article={article} key={article.id} height="h-96" />
+            ))}
           </div>
-        )}
-      </div>
+
+          <div className=" order-1 col-span-12 md:col-span-6 xl:col-span-3 px-4 ">
+            {articles?.map((article) => (
+              <ArticleCard article={article} key={article.id} />
+            ))}
+          </div>
+        </div>
+      )}
     </section>
   );
 };

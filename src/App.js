@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <main className="min-h-screen font-Jost selection:bg-primary selection:text-light ">
+      <main className="pt-24 bg-gradient-to-r from-light via-slate-100 to-light text-slate-600 min-h-screen font-Jost selection:bg-primary selection:text-light ">
         <RouteConfig />
       </main>
       <Footer />

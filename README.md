@@ -178,17 +178,16 @@ Here’s a quick overview of the folder structure:
 ```
 /src
   /components         # Contains React components
-  /services           # Contains API service functions
+  /pages              # Contains pages, like HomePage.js, ArticleDetailPage.js
   /tests              # Contains unit and UI tests
-  /assets             # Contains images, fonts, etc.
   /styles             # Global styles, including TailwindCSS setup
+  /routes             # Contains route configurations
+  /services           # Contains route configurations
   App.js              # Main entry point of the app
   index.js            # Renders the app to the DOM
-/public
-  index.html          # Main HTML template
+/public               # Main HTML template
 /.env                 # Environment variables (e.g., API keys)
-/cypress              # Cypress tests folder
-  /integration        # UI tests for Cypress
+/cypress              # Cypress tests folder      # UI tests for Cypress
 /package.json         # Project metadata and dependencies
 /README.md            # Project documentation
 

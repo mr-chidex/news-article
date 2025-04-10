@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const ArticleCard = ({ article, height = "h-44" }) => {
   return (
-    <article className="flex flex-col gap-4 mb-8 border-b pb-4 border-slate-300">
+    <article className="flex flex-col gap-4 mb-8 border-b pb-8 border-slate-300">
       <img
         className={`w-full ${height} object-cover rounded-sm`}
         src={article?.media[0]?.["media-metadata"]?.[2]?.url}
@@ -22,7 +22,7 @@ const ArticleCard = ({ article, height = "h-44" }) => {
       <div className="">
         <a
           href={article?.url}
-          className="text-indigo-500 hover:text-indigo-700"
+          className="text-indigo-500 underline hover:text-indigo-700"
         >
           Read More
         </a>

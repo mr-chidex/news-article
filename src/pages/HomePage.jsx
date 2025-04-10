@@ -31,13 +31,13 @@ const HomePage = () => {
   return (
     <section className="pt-24 bg-gradient-to-r from-light via-slate-100 to-light text-slate-600 ">
       <div className="container  mx-auto">
-        <h1 className="text-3xl px-4 ">Latest News</h1>
+        <h1 className="text-3xl text-primary px-4 ">Latest News</h1>
 
         <ul className="flex  flex-wrap gap-2 gap-y-4 my-8 px-4 ">
           {tags?.map((tag) => (
             <li
               key={tag}
-              className="px-6 p-1 border border-slate-600 rounded-full"
+              className="px-6 text-primary p-1 border border-primary rounded-full"
             >
               {tag}
             </li>

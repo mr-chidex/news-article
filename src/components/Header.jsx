@@ -26,7 +26,7 @@ const Header = () => {
       <div className="container mx-auto">
         <nav className="flex items-center justify-between">
           <Logo />
-          <ul className="grid text-lg gap-x-8 grid-flow-col">
+          <ul className="grid text-primary text-lg gap-x-8 grid-flow-col">
             {navTabs.map((tab, index) => (
               <li key={index} className="relative nav-tab pb-1">
                 <Link

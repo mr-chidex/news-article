@@ -1,70 +1,195 @@
-# Getting Started with Create React App
+# React News Article Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple React application that fetches news articles from an API, displays them in a list, and provides detailed information when a user clicks on an article. It also includes unit and UI tests, linting, and test coverage generation.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Running the Application](#running-the-application)
+- [Running Tests](#running-tests)
+  - [Unit Tests](#unit-tests)
+  - [UI Tests](#ui-tests)
+- [Generating Test Coverage Reports](#generating-test-coverage-reports)
+- [Linting](#linting)
 
-### `npm start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Before you begin, ensure you have the following installed:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Node.js](https://nodejs.org/) (version 14 or later)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/) (package managers)
 
-### `npm test`
+## Installation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository to your local machine:
 
-### `npm run build`
+   ```bash
+   git clone https://github.com/mr-chidex/news-article.git
+   cd news-article
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install the dependencies using npm or Yarn:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- If you're using npm:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+- If you're using npm:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+yarn install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Set up your API key for the NY Times API:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Go to NY Times Developer and sign up for an API key.
+- Create a .env file at the root of your project and add the following line:
 
-## Learn More
+```bash
+REACT_APP_SAMPLE_KEY=your-api-key-here
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Make sure to replace your-api-key-here with the API key you obtained.
 
-### Code Splitting
+## Running the Application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Once dependencies are installed and the environment is set up:
 
-### Analyzing the Bundle Size
+1. Start the development server:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- If you're using npm:
 
-### Making a Progressive Web App
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- If you're using npm:
 
-### Advanced Configuration
+```bash
+yarn start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```
 
-### Deployment
+This will start the development server, and you can view the app by navigating to http://localhost:3000 in your web browser
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Running Tests
 
-### `npm run build` fails to minify
+This application includes unit tests and UI tests using Jest, React Testing Library, and Cypress.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Unit Tests
+
+1. To run unit tests, execute the following command:
+
+- If you're using npm:
+
+```bash
+npm test
+```
+
+- If you're using npm:
+
+```bash
+yarn test
+
+```
+
+This will run the unit tests in watch mode. Press q to quit the test runner.
+
+2. To run tests once and generate a test coverage report, use the following:
+
+- If you're using npm:
+
+```bash
+npm test -- --coverage
+```
+
+- If you're using npm:
+
+```bash
+yarn test --coverage
+```
+
+This will generate a test coverage report in the terminal and create a coverage directory with detailed coverage information.
+
+### UI Tests
+
+UI tests are handled by Cypress. To run UI tests:
+
+1. Open Cypress:
+
+- If you're using npm:
+
+```bash
+npm run cypress
+```
+
+- If you're using npm:
+
+```bash
+yarn run cypress
+```
+
+2. This will open the Cypress UI where you can select and run UI tests. The tests are located in the cypress/integration folder.
+
+## Generating Test Coverage Reports
+
+The test coverage reports are generated when running unit tests with the --coverage flag. The report will be displayed in the terminal, and a detailed HTML version will be created in the coverage folder.
+
+To view the HTML report:
+
+1. Navigate to the coverage directory:
+
+```bash
+cd coverage
+
+```
+
+2. Open the index.html file in your browser to view the detailed coverage report.
+
+## Linting
+
+This project uses ESLint for linting to ensure code quality and consistency.
+
+1. To run the linter, use the following command:
+
+- If you're using npm:
+
+```bash
+npm run lint
+```
+
+- If you're using npm:
+
+```bash
+yarn run lint
+```
+
+This will analyze your code and display any linting errors or warnings in the terminal.
+
+## Folder Structure
+
+Here’s a quick overview of the folder structure:
+
+```
+/src
+  /components         # Contains React components
+  /services           # Contains API service functions
+  /tests              # Contains unit and UI tests
+  /assets             # Contains images, fonts, etc.
+  /styles             # Global styles, including TailwindCSS setup
+  App.js              # Main entry point of the app
+  index.js            # Renders the app to the DOM
+/public
+  index.html          # Main HTML template
+/.env                 # Environment variables (e.g., API keys)
+/cypress              # Cypress tests folder
+  /integration        # UI tests for Cypress
+/package.json         # Project metadata and dependencies
+/README.md            # Project documentation
+
+```

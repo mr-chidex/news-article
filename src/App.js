@@ -8,7 +8,9 @@ const App = () => {
   return (
     <Router>
       <Header />
-      <RouteConfig />
+      <main className="min-h-screen font-Jost selection:bg-primary selection:text-light ">
+        <RouteConfig />
+      </main>
       <Footer />
     </Router>
   );
